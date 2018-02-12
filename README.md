@@ -13,6 +13,8 @@ Herminio García González (@herminiogg)
 
 Jose Emilio Labra Gayo (@labra)
 
+AUTORES 2016-2017:
+
 Daniel Bermejo Blanco (@UO204115)
 
 Pedro Fernández Álvarez (@UO244928)
@@ -20,3 +22,13 @@ Pedro Fernández Álvarez (@UO244928)
 Darío Alonso Díaz (@UO237089)
 
 Jonathan Vallés Robla (@UO231850)
+
+AUTORES 2017-2018:
+
+César Camblor García (@UO251281)
+
+Pablo Díaz Rancaño (@UO251017)
+
+Fernando De la Torre Cueva (@UO245182)
+
+Pablo Álvarez Álvarez (@UO251561)
