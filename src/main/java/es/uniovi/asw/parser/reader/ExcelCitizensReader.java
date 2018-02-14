@@ -42,29 +42,23 @@ public class ExcelCitizensReader implements CitizensReader {
 					citizen.setNombre(nextCell.getStringCellValue());
 					break;
 				case 1:
-					citizen.setApellidos(nextCell.getStringCellValue());
+					citizen.setLocalizacion(nextCell.getStringCellValue());
 					break;
 				case 2:
 					citizen.setEmail(nextCell.getStringCellValue());
 					break;
 				case 3:
-					citizen.setFechaNacimiento(nextCell.getDateCellValue());
+					citizen.setID((long)nextCell.getNumericCellValue());
 					break;
 				case 4:
-					citizen.setDireccionPostal(nextCell.getStringCellValue());
+					citizen.setTipo((int)nextCell.getNumericCellValue());
 					break;
-				case 5:
-					citizen.setNacionalidad(nextCell.getStringCellValue());
-					break;
-				case 6:
-					citizen.setDni(nextCell.getStringCellValue());
-					break;
+				
 				default:
 					break;
 				}
 			}
-			citizen.setNombreUsuario(citizen.getEmail());
-			citizen.setContrasena(citizen.getNombre() + "123");
+			
 			citizens.add(citizen);
 		}
 		workbook.close();
