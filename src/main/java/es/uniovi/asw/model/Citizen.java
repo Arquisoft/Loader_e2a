@@ -5,148 +5,116 @@ import java.util.Date;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "TCITIZENS")
+@Table(name = "TAGENTS")
 public class Citizen {
 
+
+//	@Id
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	private Long ID;
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long ID;
+
+	public void setID(Long iD) {
+		ID = iD;
+	}
+	
+
+	public void setTipo(int tipo) {
+		this.tipo = tipo;
+	}
+
 
 	@Column(name = "NOMBRE")
 	private String nombre;
-
-	@Column(name = "APELLIDOS")
-	private String apellidos;
+	
+	@Column(name = "LOCALIZACION")
+	private String localizacion;
 
 	@Column(name = "EMAIL")
 	private String email;
 
-	@Temporal(TemporalType.DATE)
-	@Column(name = "FECHA_NACIMIENTO")
-	private Date fechaNacimiento;
+	@Column(name = "TIPO")
+	private int tipo;
 
-	@Column(name = "DIRECCION_POSTAL")
-	private String direccionPostal;
-
-	@Column(name = "NACIONALIDAD")
-	private String nacionalidad;
-
-	@Column(name = "DNI")
-	private String dni;
-
-	@Column(name = "NOMBREUSUARIO")
-	private String nombreUsuario;
-
-	@Column(name = "CONTRASENA")
-	private String contrasena;
 
 	// Constructor vacio para JPA
 	public Citizen() {
 	}
 
-	public Citizen(String nombre, String apellidos, String email,
-			Date fechaNacimiento, String direccionPostal, String nacionalidad,
-			String dni, String nombreUsuario, String contrasena) {
+	
+	
+	public Citizen(Long iD, String nombre, String localizacion, String email, int tipo) {
 		super();
+		ID = iD;
 		this.nombre = nombre;
-		this.apellidos = apellidos;
+		this.localizacion = localizacion;
 		this.email = email;
-		this.fechaNacimiento = fechaNacimiento;
-		this.direccionPostal = direccionPostal;
-		this.nacionalidad = nacionalidad;
-		this.dni = dni;
-		this.nombreUsuario = nombreUsuario;
-		this.contrasena = contrasena;
+		this.tipo = tipo;
 	}
 
-	public Citizen(String nombre, String apellidos, String email,
-			Date fechaNacimiento, String direccionPostal, String nacionalidad,
-			String dni) {
-		super();
-		this.nombre = nombre;
-		this.apellidos = apellidos;
-		this.email = email;
-		this.fechaNacimiento = fechaNacimiento;
-		this.direccionPostal = direccionPostal;
-		this.nacionalidad = nacionalidad;
-		this.dni = dni;
+
+
+	@Override
+	public String toString() {
+		return "Citizen [ID=" + ID + ", nombre=" + nombre + ", localizacion=" + localizacion + ", email=" + email
+				+ ", tipo=" + tipo + "]";
 	}
-	
+
+
+
 	public Long getID() {
 		return ID;
 	}
 
-	public String getNombreUsuario() {
-		return nombreUsuario;
-	}
-
-	public void setNombreUsuario(String nombreUsuario) {
-		this.nombreUsuario = nombreUsuario;
-	}
-
-	public String getContrasena() {
-		return contrasena;
-	}
-
-	public void setContrasena(String contrasena) {
-		this.contrasena = contrasena;
-	}
+	
 
 	public String getNombre() {
 		return nombre;
 	}
 
-	public String getApellidos() {
-		return apellidos;
+	
+
+	public String getLocalizacion() {
+		return localizacion;
 	}
+
+
+
+	public void setLocalizacion(String localizacion) {
+		this.localizacion = localizacion;
+	}
+
+
+
+	public int getTipo() {
+		return tipo;
+	}
+
+
 
 	public String getEmail() {
 		return email;
 	}
 
-	public Date getFechaNacimiento() {
-		return (Date) fechaNacimiento.clone();
-	}
+	
 
-	public String getDireccionPostal() {
-		return direccionPostal;
-	}
+	
 
-	public String getNacionalidad() {
-		return nacionalidad;
-	}
-
-	public String getDni() {
-		return dni;
-	}
-
+	
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
-	public void setApellidos(String apellidos) {
-		this.apellidos = apellidos;
-	}
+	
 
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
-	public void setFechaNacimiento(Date fechaNacimiento) {
-		this.fechaNacimiento = fechaNacimiento;
-	}
+	
 
-	public void setDireccionPostal(String direccionPostal) {
-		this.direccionPostal = direccionPostal;
-	}
-
-	public void setNacionalidad(String nacionalidad) {
-		this.nacionalidad = nacionalidad;
-	}
-
-	public void setDni(String dni) {
-		this.dni = dni;
-	}
+	
 
 	@Override
 	public int hashCode() {
@@ -173,12 +141,6 @@ public class Citizen {
 		return true;
 	}
 
-	@Override
-	public String toString() {
-		return "Citizen [nombre=" + nombre + ", apellidos=" + apellidos
-				+ ", email=" + email + ", fechaNacimiento=" + fechaNacimiento
-				+ ", direccionPostal=" + direccionPostal + ", nacionalidad="
-				+ nacionalidad + ", dni=" + dni + "]";
-	}
+	
 
 }
