@@ -48,6 +48,6 @@ Una vez que se tenga el proyecto importado, hay que abrir la línea de comandos 
 la carpeta raíz del proyecto (*xxx\xxx\...\Loader_e2a*).
 
 A continuación, se ejecuta la siguiente instrucción:
-xxx\xxx\...\Loader_e2a>'mvn exec:java -Dexec.mainClass="es.uniovi.asw.Application" -Dexec.args="excel *ruta_fichero*'
+> xxx\xxx\...\Loader_e2a>mvn exec:java -Dexec.mainClass="es.uniovi.asw.Application" -Dexec.args="excel *ruta_fichero_csv* *ruta_fichero_excel*
 
-"ruta_fichero" puede ser, por ejemplo, *src/test/resources/test.xlsx*
+Por ejemplo, "ruta_fichero_excel" puede ser *src/test/resources/test.xlsx*
