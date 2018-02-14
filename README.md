@@ -4,30 +4,41 @@
 [![Build Status](https://travis-ci.org/Arquisoft/Loader_e2a.svg?branch=master)](https://travis-ci.org/Arquisoft/Loader_e2a)
 [![codecov](https://codecov.io/gh/Arquisoft/Loader_e2a/branch/master/graph/badge.svg)](https://codecov.io/gh/Arquisoft/Loader_e2a)
 
-Loader e2a module
+Loader - e2a
 
-# Authors
+# Autores
 
-Herminio García González (@herminiogg)
+* Herminio García González (@herminiogg)
 
-Jose Emilio Labra Gayo (@labra)
+* Jose Emilio Labra Gayo (@labra)
 
-AUTORES 2016-2017:
+## AUTORES 2016-2017:
 
-Daniel Bermejo Blanco (@UO204115)
+* Daniel Bermejo Blanco (@UO204115)
 
-Pedro Fernández Álvarez (@UO244928)
+* Pedro Fernández Álvarez (@UO244928)
 
-Darío Alonso Díaz (@UO237089)
+* Darío Alonso Díaz (@UO237089)
 
-Jonathan Vallés Robla (@UO231850)
+* Jonathan Vallés Robla (@UO231850)
 
-AUTORES 2017-2018:
+## AUTORES 2017-2018:
 
-César Camblor García (@UO251281)
+* César Camblor García (@UO251281)
 
-Pablo Díaz Rancaño (@UO251017)
+* Pablo Díaz Rancaño (@UO251017)
 
-Fernando De la Torre Cueva (@UO245182)
+* Fernando De la Torre Cueva (@UO245182)
 
-Pablo Álvarez Álvarez (@UO251561)
+* Pablo Álvarez Álvarez (@UO251561)
+
+
+### Introducción al repositorio
+
+Este repositorio pertenece a la parte *Loader* del grupo de trabajo **E2a**,
+encargada de cargar agentes (personas, sensores, entidades, etc.) que envían incidencias
+al sistema. La carga se lleva a cabo desde un fichero Excel, y se almacenan los datos
+en una base de datos para, posteriormente, ser procesada por la parte *Agent*.
+
+### Cómo ejecutar el proyecto
+
