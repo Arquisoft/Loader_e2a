@@ -11,15 +11,14 @@ public class Application {
 
 	public static void main(String... args) {
 		try {
+			System.out.println(args[0]);
 			if (args.length != 2)
 				throw new IllegalArgumentException("Error en el número de parámetros.");
 			//new Application().run((String) args[0], (String) args[1]);
 			//new Application().run("excel","src/test/resources/test.xlsx");
-			// Por si hay problemas con la de arriba
-			// new
-			// CitizensLoader().load("excel","src/test/resources/test.xlsx");
-			// new CitizensLoader().load("texto","src/test/resources/test.txt");
-			List<Citizen> lista = new Loader().readCitizens(args[0], args[1]);
+			Loader loader = new Loader(args[0], args[1]);
+			loader.readList();
+			//List<Citizen> lista = new Loader().readCitizens("excel", args[0]);
 			
 		} catch (Exception e) {
 			e.printStackTrace();

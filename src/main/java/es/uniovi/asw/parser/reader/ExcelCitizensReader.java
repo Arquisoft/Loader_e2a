@@ -17,8 +17,12 @@ import es.uniovi.asw.model.Citizen;
 
 public class ExcelCitizensReader implements CitizensReader {
 
+	private final static int COLUMNA_LOCALIZACION=1;
+	
 	@Override
 	public List<Citizen> readCitizens(String filePath) throws IOException {
+		boolean agenteValido = true;
+		
 		List<Citizen> citizens = new ArrayList<Citizen>();
 		File file = new File(filePath);
 		FileInputStream inputStream = new FileInputStream(file);
@@ -36,41 +40,68 @@ public class ExcelCitizensReader implements CitizensReader {
 			while (cellIterator.hasNext()) {
 				Cell nextCell = cellIterator.next();
 				int columnIndex = nextCell.getColumnIndex();
-
+				
+				boolean celdaCorrecta = true;
+				
 				switch (columnIndex) {
 				case 0:
+					celdaCorrecta = compruebaCeldaString( nextCell.getStringCellValue(), columnIndex );
 					citizen.setNombre(nextCell.getStringCellValue());
 					break;
 				case 1:
-					citizen.setApellidos(nextCell.getStringCellValue());
+					celdaCorrecta = compruebaCeldaString( nextCell.getStringCellValue(), columnIndex );
+					citizen.setLocalizacion(nextCell.getStringCellValue());
 					break;
 				case 2:
+					celdaCorrecta = compruebaCeldaString( nextCell.getStringCellValue(), columnIndex );
 					citizen.setEmail(nextCell.getStringCellValue());
 					break;
 				case 3:
-					citizen.setFechaNacimiento(nextCell.getDateCellValue());
+					celdaCorrecta = compruebaCeldaNumeric( nextCell.getNumericCellValue(), columnIndex );
+					citizen.setID((long)nextCell.getNumericCellValue());
 					break;
 				case 4:
-					citizen.setDireccionPostal(nextCell.getStringCellValue());
+					celdaCorrecta = compruebaCeldaNumeric( nextCell.getNumericCellValue(), columnIndex );
+					citizen.setTipo((int)nextCell.getNumericCellValue());
 					break;
-				case 5:
-					citizen.setNacionalidad(nextCell.getStringCellValue());
-					break;
-				case 6:
-					citizen.setDni(nextCell.getStringCellValue());
-					break;
+				
 				default:
 					break;
 				}
+				
+				if (!celdaCorrecta)
+				{
+					agenteValido = false;
+					break;
+				}
 			}
-			citizen.setNombreUsuario(citizen.getEmail());
-			citizen.setContrasena(citizen.getNombre() + "123");
-			citizens.add(citizen);
+			
+			if (agenteValido)
+				citizens.add(citizen);
+			
+			agenteValido = true;
 		}
 		workbook.close();
 		inputStream.close();
 
 		return citizens;
 	}
-
+	
+	private boolean compruebaCeldaString(String contenidoCelda, int columna) 
+	{
+		if ( columna != COLUMNA_LOCALIZACION 
+				&& (contenidoCelda == null || contenidoCelda.equals("")))
+			return false;
+		
+		return true;
+	}
+	
+	private boolean compruebaCeldaNumeric(double contenidoCelda, int columna) 
+	{
+		if ( columna != COLUMNA_LOCALIZACION 
+				&& (int)contenidoCelda == 0)
+			return false;
+		
+		return true;
+	}
 }

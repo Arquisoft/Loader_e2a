@@ -11,7 +11,6 @@ import es.uniovi.asw.parser.emailWriter.EmailWriter;
 import es.uniovi.asw.parser.emailWriter.TxtEmailWriter;
 import es.uniovi.asw.parser.reader.CitizensReader;
 import es.uniovi.asw.parser.reader.ExcelCitizensReader;
-import es.uniovi.asw.parser.reader.TextCitizensReader;
 import es.uniovi.asw.reportWriter.LogWriter;
 
 public class Loader {
@@ -39,7 +38,7 @@ public class Loader {
 				sendEmail(citizen, new TxtEmailWriter());
 				citizenService.insertCitizen(citizen);
 			} else {
-				String mensaje = "El usuario " + citizen.getNombreUsuario()
+				String mensaje = "El usuario " + citizen.getID()
 						+ " ya está registrado.";
 				LogWriter.write(mensaje);
 			}
@@ -57,7 +56,7 @@ public class Loader {
 				+ ":\nSaludos "
 				+ citizen.getNombre()
 				+ ", le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.\nSu nombre de usuario es: "
-				+ citizen.getNombreUsuario();
+				+ citizen.getID();
 		for (EmailWriter writer : writers) {
 			writer.write(email);
 		}
@@ -70,8 +69,6 @@ public class Loader {
 	private CitizensReader getReader(String formato) {
 		if ("excel".equals(formato)) {
 			return new ExcelCitizensReader();
-		} else if ("texto".equals(formato)) {
-			return new TextCitizensReader();
 		}
 		return null;
 	}
