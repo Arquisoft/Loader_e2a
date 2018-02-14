@@ -42,3 +42,12 @@ en una base de datos para, posteriormente, ser procesada por la parte *Agent*.
 
 ### Cómo ejecutar el proyecto
 
+Lo primero que hay que hacer para ejecutar el proyecto es clonarlo o descargarlo. A continuación,
+se debe importar (**COMO MAVEN**) el proyecto descargado en su IDE favorito.
+Una vez que se tenga el proyecto importado, hay que abrir la línea de comandos y trasladarse hasta
+la carpeta raíz del proyecto (*xxx\xxx\...\Loader_e2a*).
+
+A continuación, se ejecuta la siguiente instrucción:
+xxx\xxx\...\Loader_e2a>'mvn exec:java -Dexec.mainClass="es.uniovi.asw.Application" -Dexec.args="excel *ruta_fichero*'
+
+"ruta_fichero" puede ser, por ejemplo, *src/test/resources/test.xlsx*
