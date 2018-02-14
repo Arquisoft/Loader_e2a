@@ -1,0 +1,9 @@
+To juan@example.com:
+Saludos Juan, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: juan@example.com
+To luis@example.com:
+Saludos Luis, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: luis@example.com
+To ana@example.com:
+Saludos Ana, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: ana@example.com

@@ -84,7 +84,7 @@ public class CitizensLoaderTest {
 		assertEquals(ana.getNombreUsuario(), "ana@example.com");
 		assertEquals(ana.getContrasena(), "Ana123");
     }
-    /*
+    
     @Test
     public void testBBDD() throws IOException, BusinessException { 
     	
@@ -106,5 +106,5 @@ public class CitizensLoaderTest {
 		
 		citizenService.deleteAllCitizens(citizens);	
     }
-    */ 
+    
 }

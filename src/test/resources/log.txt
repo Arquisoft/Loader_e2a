@@ -1,0 +1,3 @@
+El usuario juan@example.com ya está registrado.
+El usuario luis@example.com ya está registrado.
+El usuario ana@example.com ya está registrado.

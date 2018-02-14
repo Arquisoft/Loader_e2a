@@ -19,6 +19,8 @@ public class Loader {
 	private String formato;
 	private String filePath;
 
+	public Loader() {}
+	
 	public Loader(String formato, String filePath) {
 		this.formato = formato;
 		this.filePath = filePath;

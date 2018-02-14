@@ -1,2 +1,18 @@
 /*C3*/SET SCHEMA PUBLIC
 DISCONNECT
+/*C5*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C6*/SET SCHEMA PUBLIC
+INSERT INTO TCITIZENS VALUES(1,'Juan','Torres Pardo','juan@example.com','1985-10-10','C/ Federico Garc\u00eda Lorca 2','Espa\u00f1ol','90500084Y','juan@example.com','Juan123')
+COMMIT
+INSERT INTO TCITIZENS VALUES(2,'Luis','L\u00f3pez Fernando','luis@example.com','1970-03-02','C/ Real Oviedo 2','Espa\u00f1ol','19160962F','luis@example.com','Luis123')
+COMMIT
+INSERT INTO TCITIZENS VALUES(3,'Ana','Torres Pardo','ana@example.com','1960-01-01','Av. De la Constituci\u00f3n 8','Espa\u00f1ol','09940449X','ana@example.com','Ana123')
+COMMIT
+DELETE FROM TCITIZENS WHERE ID=1
+DELETE FROM TCITIZENS WHERE ID=2
+DELETE FROM TCITIZENS WHERE ID=3
+COMMIT
+DISCONNECT
+/*C4*/SET SCHEMA PUBLIC
+DISCONNECT
