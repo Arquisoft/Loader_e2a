@@ -9,9 +9,9 @@ import javax.persistence.*;
 public class Citizen {
 
 
-//	@Id
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
-//	private Long ID;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long claveAcceso;
 	@Id
 	private Long ID;
 
@@ -22,6 +22,11 @@ public class Citizen {
 
 	public void setTipo(int tipo) {
 		this.tipo = tipo;
+	}
+
+
+	public Long getClaveAcceso() {
+		return claveAcceso;
 	}
 
 
@@ -121,6 +126,11 @@ public class Citizen {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((ID == null) ? 0 : ID.hashCode());
+		result = prime * result + ((claveAcceso == null) ? 0 : claveAcceso.hashCode());
+		result = prime * result + ((email == null) ? 0 : email.hashCode());
+		result = prime * result + ((localizacion == null) ? 0 : localizacion.hashCode());
+		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
+		result = prime * result + tipo;
 		return result;
 	}
 
@@ -137,6 +147,28 @@ public class Citizen {
 			if (other.ID != null)
 				return false;
 		} else if (!ID.equals(other.ID))
+			return false;
+		if (claveAcceso == null) {
+			if (other.claveAcceso != null)
+				return false;
+		} else if (!claveAcceso.equals(other.claveAcceso))
+			return false;
+		if (email == null) {
+			if (other.email != null)
+				return false;
+		} else if (!email.equals(other.email))
+			return false;
+		if (localizacion == null) {
+			if (other.localizacion != null)
+				return false;
+		} else if (!localizacion.equals(other.localizacion))
+			return false;
+		if (nombre == null) {
+			if (other.nombre != null)
+				return false;
+		} else if (!nombre.equals(other.nombre))
+			return false;
+		if (tipo != other.tipo)
 			return false;
 		return true;
 	}
