@@ -1,52 +1,47 @@
 package es.uniovi.asw.model;
 
-import java.util.Date;
-
 import javax.persistence.*;
 
 @Entity
-@Table(name = "TAGENTS")
-public class Citizen {
+@Table(name = "TAGENT")
+public class Agent {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long ID;
-
-	public void setID(Long iD) {
-		ID = iD;
-	}
+	@Column(unique = true)
+	private String ID;
+	@Column(name = "NOMBRE")
+	private String nombre;
+	@Column(name = "LOCALIZACION")
+	private String localizacion;
+	@Column(name = "EMAIL")
+	private String email;
+	@Column(name = "TIPO")
+	private int tipo;
 	
-
 	public void setTipo(int tipo) {
 		this.tipo = tipo;
 	}
-
-
-	@Column(name = "NOMBRE")
-	private String nombre;
 	
-	@Column(name = "LOCALIZACION")
-	private String localizacion;
-
-	@Column(name = "EMAIL")
-	private String email;
-
-	@Column(name = "TIPO")
-	private int tipo;
+	
+	public void setID(String id)
+	{
+		this.ID = id;
+	}
 
 
 	// Constructor vacio para JPA
-	public Citizen() {
+	public Agent() {
 	}
 
 	
 	
-	public Citizen(Long iD, String nombre, String localizacion, String email, int tipo) {
+	public Agent(String iD, String nombre, String localizacion, String email, int tipo) {
 		super();
-		ID = iD;
+		this.ID = iD;
 		this.nombre = nombre;
 		this.localizacion = localizacion;
 		this.email = email;
+		
 		this.tipo = tipo;
 	}
 
@@ -60,7 +55,7 @@ public class Citizen {
 
 
 
-	public Long getID() {
+	public String getID() {
 		return ID;
 	}
 
@@ -108,6 +103,34 @@ public class Citizen {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((ID == null) ? 0 : ID.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Agent other = (Agent) obj;
+		if (ID == null) {
+			if (other.ID != null)
+				return false;
+		} else if (!ID.equals(other.ID))
+			return false;
+		return true;
+	}
+	
+	
 	
 
 }

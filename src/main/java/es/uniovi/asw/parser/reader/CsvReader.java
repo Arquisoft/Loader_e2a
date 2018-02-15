@@ -9,10 +9,11 @@ import com.opencsv.CSVReader;
 
 public class CsvReader {
 
-	public HashMap<Integer, String> leerCSV() throws IOException {
+	public HashMap<Integer, String> leerCSV(String rutaFichero) throws IOException {
 		HashMap<Integer, String> map = new HashMap<Integer, String>();
-		final String FICHERO_URL = "src/main/java/util/TiposAgentes.csv";
-
+		//final String FICHERO_URL = "src/test/resources/TiposAgentes.csv";
+		final String FICHERO_URL = rutaFichero;
+		
 		CSVReader reader = null;
 		try {
 			reader = new CSVReader(new FileReader(FICHERO_URL));

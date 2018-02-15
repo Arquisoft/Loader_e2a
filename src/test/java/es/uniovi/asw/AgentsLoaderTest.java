@@ -1,32 +1,30 @@
 package es.uniovi.asw;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 import org.junit.Test;
 
-import es.uniovi.asw.business.CitizenService;
+import es.uniovi.asw.business.AgentService;
 import es.uniovi.asw.conf.ServicesFactory;
-import es.uniovi.asw.model.Citizen;
+import es.uniovi.asw.model.Agent;
 import es.uniovi.asw.model.exception.BusinessException;
 import es.uniovi.asw.parser.Loader;
 
-public class CitizensLoaderTest {
+public class AgentsLoaderTest {
 
     @Test
     public void testLoadFromTxt() throws IOException, BusinessException {
     	
 //    	Loader loader = new Loader("texto", "src/test/resources/test.txt");
-//		List<Citizen> citizens = loader.readCitizens(loader.getFormato(), loader.getFilePath());
-//		assertEquals(7, citizens.size());
+//		List<agent> agents = loader.readagents(loader.getFormato(), loader.getFilePath());
+//		assertEquals(7, agents.size());
 //		
 //		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 //		
-//		Citizen pablo = citizens.get(0);
+//		agent pablo = agents.get(0);
 //		assertEquals(pablo.getNombre(), "Pablo");
 //		assertEquals(pablo.getApellidos(), "Alonso Gil");
 //		assertEquals(pablo.getEmail(), "pablo@example.com");
@@ -38,7 +36,7 @@ public class CitizensLoaderTest {
 //		assertEquals(pablo.getNombreUsuario(), "pablo@example.com");
 //		assertEquals(pablo.getContrasena(), "Pablo123");
 //		
-//		Citizen eva = citizens.get(5);
+//		agent eva = agents.get(5);
 //		assertEquals(eva.getNombre(), "Eva");
 //		assertEquals(eva.getApellidos(), "Belmonte Blanco");
 //		assertEquals(eva.getEmail(), "eva@example.com");
@@ -55,12 +53,12 @@ public class CitizensLoaderTest {
     @Test
     public void testLoadFromExcel() throws IOException, BusinessException {
 //		Loader loader = new Loader("excel", "src/test/resources/test.xlsx");
-//		List<Citizen> citizens = loader.readCitizens(loader.getFormato(), loader.getFilePath());
-//		assertEquals(3, citizens.size());
+//		List<agent> agents = loader.readagents(loader.getFormato(), loader.getFilePath());
+//		assertEquals(3, agents.size());
 //		
 //		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 //		
-//		Citizen juan = citizens.get(0);
+//		agent juan = agents.get(0);
 //		assertEquals(juan.getNombre(), "Juan");
 //		assertEquals(juan.getApellidos(), "Torres Pardo");
 //		assertEquals(juan.getEmail(), "juan@example.com");
@@ -72,7 +70,7 @@ public class CitizensLoaderTest {
 //		assertEquals(juan.getNombreUsuario(), "juan@example.com");
 //		assertEquals(juan.getContrasena(), "Juan123");
 //		
-//		Citizen ana = citizens.get(2);
+//		agent ana = agents.get(2);
 //		assertEquals(ana.getNombre(), "Ana");
 //		assertEquals(ana.getApellidos(), "Torres Pardo");
 //		assertEquals(ana.getEmail(), "ana@example.com");
@@ -88,23 +86,23 @@ public class CitizensLoaderTest {
     @Test
     public void testBBDD() throws IOException, BusinessException { 
     	
-    	CitizenService citizenService = ServicesFactory.getCitizenService();
-    	List<Citizen> citizens = citizenService.findAllCitizens();
-    	citizenService.deleteAllCitizens(citizens);
+    	AgentService agentService = ServicesFactory.getAgentService();
+    	List<Agent> agents = agentService.findAllAgents();
+    	agentService.deleteAllAgents(agents);
     	
     	Loader loader = new Loader("excel", "src/test/resources/test.xlsx");
     	
-    	//Load and send emails to all of the new Citizens
+    	//Load and send emails to all of the new agents
 		loader.readList();
-		citizens = citizenService.findAllCitizens();
-		assertEquals(citizens.size(), 3);
+		agents = agentService.findAllAgents();
+		assertEquals(agents.size(), 3);
 		
 		//We load all of them again, but all of them are already in the database, so we write the log file
 		loader.readList();
-		citizens = citizenService.findAllCitizens();
-		assertEquals(citizens.size(), 3);
+		agents = agentService.findAllAgents();
+		assertEquals(agents.size(), 3);
 		
-		citizenService.deleteAllCitizens(citizens);	
+		agentService.deleteAllAgents(agents);	
     }
     
 }
