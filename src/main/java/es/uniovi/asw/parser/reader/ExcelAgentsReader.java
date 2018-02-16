@@ -45,8 +45,9 @@ public class ExcelAgentsReader implements AgentsReader {
 		Sheet sheet = workbook.getSheetAt(0);
 		Iterator<Row> iterator = sheet.iterator();
 		iterator.next(); // Para saltar la primera fila de titulos
-
+		
 		while (iterator.hasNext()) {
+			
 			Row nextRow = iterator.next();
 			Iterator<Cell> cellIterator = nextRow.cellIterator();
 			Agent agent = new Agent();
@@ -64,24 +65,18 @@ public class ExcelAgentsReader implements AgentsReader {
 				
 				switch (columnIndex) {
 				case 0: // nombre
-//					celdaCorrecta = compruebaCeldaString( nextCell.getStringCellValue(), columnIndex );
 					agent.setNombre( (String) getContenidoCelda( nextCell ) );
 					break;
 				case 1: // localización
-//					celdaCorrecta = compruebaCeldaString( nextCell.getStringCellValue(), columnIndex );
 					agent.setLocalizacion( (String) getContenidoCelda( nextCell ) );
 					break;
 				case 2: // email
-//					celdaCorrecta = compruebaCeldaString( nextCell.getStringCellValue(), columnIndex );
 					agent.setEmail( (String) getContenidoCelda( nextCell ) );
 					break;
 				case 3: // identificador
-//					celdaCorrecta = compruebaCeldaValida( nextCell, columnIndex );
 					agent.setID( (String) getContenidoCelda( nextCell ) );
 					break;
 				case 4: // tipo agente
-//					celdaCorrecta = compruebaCeldaString( nextCell.getStringCellValue(), columnIndex )
-//						&& compruebaAgenteEnCSV( nextCell.getStringCellValue() );
 					celdaCorrecta = compruebaAgenteEnCSV( (String) getContenidoCelda(nextCell) );
 					if (!celdaCorrecta)
 					{
@@ -92,12 +87,16 @@ public class ExcelAgentsReader implements AgentsReader {
 					break;
 				
 				default:
+					agenteValido = false;
 					break;
 				}
 			}
 			
-			if (agenteValido)
+			if ( comprobacionesFinales( agent ) && agenteValido ) {
+				agent.crearContraseña();
 				citizens.add(agent);
+			}
+			
 			else
 				System.err.println("Agente no insertado.");
 			
@@ -176,5 +175,25 @@ public class ExcelAgentsReader implements AgentsReader {
         }
 		
 		return tipo;
+	}
+	
+	private boolean comprobacionesFinales(Agent agente)
+	{
+		if (agente.getNombre() == null 		||
+				agente.getID() == null 		||
+				agente.getEmail() == null   ||
+				agente.getTipo() == 0 		||
+				!compruebaLocalizacion( agente ))
+		{
+			return false;
+		}
+		
+		return true;
+	}
+	
+	private boolean compruebaLocalizacion(Agent agente)
+	{
+		return ( (agente.getTipo() == 3 && agente.getLocalizacion() != null) || agente.getTipo() != 3) 
+																								? true : false;
 	}
 }

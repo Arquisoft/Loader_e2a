@@ -1,6 +1,11 @@
 package es.uniovi.asw.model;
 
-import javax.persistence.*;
+import java.util.Random;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "TAGENT")
@@ -9,6 +14,8 @@ public class Agent {
 	@Id
 	@Column(unique = true)
 	private String ID;
+	@Column(name = "PASSWORD")
+	private String password;
 	@Column(name = "NOMBRE")
 	private String nombre;
 	@Column(name = "LOCALIZACION")
@@ -41,7 +48,6 @@ public class Agent {
 		this.nombre = nombre;
 		this.localizacion = localizacion;
 		this.email = email;
-		
 		this.tipo = tipo;
 	}
 
@@ -56,6 +62,9 @@ public class Agent {
 
 
 	public String getID() {
+		return ID;
+	}
+	public String getNombreUsuario() {
 		return ID;
 	}
 
@@ -132,5 +141,24 @@ public class Agent {
 	
 	
 	
-
+	public void crearContraseña()
+	{
+		Random random = new Random();
+		
+		String pass = "";
+		int longitud_pass = random.nextInt(4) + 7;
+		
+		for (int i = 0; i < longitud_pass; i++) 
+		{
+			char caracterRandom = (char)(random.nextInt(26) + 'a'); // caracter de A a Z
+			pass += caracterRandom;
+		}
+		
+		this.password = pass;
+	}
+	
+	public String getPassword()
+	{
+		return password;
+	}
 }
