@@ -105,6 +105,7 @@
 			<groupId>org.hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
 			<version>2.2.4</version>
+			<scope>runtime</scope>
 		</dependency>
 
 		<dependency>
