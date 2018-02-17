@@ -32,22 +32,31 @@ Loader - e2a
 
 * Pablo Álvarez Álvarez (@UO251561)
 
-
-### Introducción al repositorio
+## Introducción al repositorio
 
 Este repositorio pertenece a la parte *Loader* del grupo de trabajo **E2a**,
 encargada de cargar agentes (personas, sensores, entidades, etc.) que envían incidencias
 al sistema. La carga se lleva a cabo desde un fichero Excel, y se almacenan los datos
 en una base de datos para, posteriormente, ser procesada por la parte *Agent*.
 
-### Cómo ejecutar el proyecto
+## Cómo ejecutar el proyecto
 
 Lo primero que hay que hacer para ejecutar el proyecto es clonarlo o descargarlo. A continuación,
-se debe importar (**COMO MAVEN**) el proyecto descargado en su IDE favorito.
+se debe importar (**COMO [MAVEN](http://maven.apache.org/download.cgi)**) el proyecto descargado en su entorno favorito.
 Una vez que se tenga el proyecto importado, hay que abrir la línea de comandos y trasladarse hasta
 la carpeta raíz del proyecto (*xxx\xxx\...\Loader_e2a*).
 
 A continuación, se ejecuta la siguiente instrucción:
-> xxx\xxx\...\Loader_e2a>mvn exec:java -Dexec.mainClass="es.uniovi.asw.Application" -Dexec.args="excel *ruta_fichero_csv* *ruta_fichero_excel*
 
-Por ejemplo, "ruta_fichero_excel" puede ser *src/test/resources/test.xlsx*
+```bash
+C:\...\Loader_e2a>mvn exec:java -Dexec.mainClass="es.uniovi.asw.Application" -Dexec.args="excel *ruta_fichero_excel* *ruta_fichero_csv*"
+```
+
+>Por ejemplo:, ruta_fichero_excel puede ser:
+```
+src/test/resources/test.xlsx
+```
+>ruta_fichero_csv:
+```
+src/test/resources/TiposAgentes.csv
+```
