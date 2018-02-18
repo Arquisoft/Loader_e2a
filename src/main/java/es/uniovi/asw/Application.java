@@ -3,7 +3,8 @@ package es.uniovi.asw;
 import java.io.IOException;
 
 import es.uniovi.asw.model.exception.BusinessException;
-import es.uniovi.asw.parser.Loader;
+import es.uniovi.asw.parser.ReadList;
+import es.uniovi.asw.parser.reader.Loader;
 
 public class Application {
 
@@ -31,7 +32,7 @@ public class Application {
 		String filePathExcel = parametros[1]; // "src/test/resources/xxx.xlsx"
 		String filePathCSV = parametros[2]; // "src/test/resources/yyy.csv"
 		
-		Loader loader = new Loader( formato, filePathExcel, filePathCSV );
+		ReadList loader = new Loader( formato, filePathExcel, filePathCSV );
 		loader.readList();	
 	}
 

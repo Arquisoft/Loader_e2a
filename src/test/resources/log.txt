@@ -15,3 +15,5 @@ El usuario 58429367Y ya está registrado.
 El usuario 3000 ya está registrado.
 El usuario 19800 ya está registrado.
 El usuario EntityX100 ya está registrado.
+El usuario 21487463Y tiene una localización incorrecta.
+El usuario 1111111X no tiene email.

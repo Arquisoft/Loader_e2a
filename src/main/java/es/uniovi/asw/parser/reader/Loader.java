@@ -1,4 +1,4 @@
-package es.uniovi.asw.parser;
+package es.uniovi.asw.parser.reader;
 
 import java.io.IOException;
 import java.util.List;
@@ -7,13 +7,13 @@ import es.uniovi.asw.business.AgentService;
 import es.uniovi.asw.conf.ServicesFactory;
 import es.uniovi.asw.model.Agent;
 import es.uniovi.asw.model.exception.BusinessException;
+import es.uniovi.asw.parser.ReadList;
 import es.uniovi.asw.parser.emailWriter.EmailWriter;
 import es.uniovi.asw.parser.emailWriter.TxtEmailWriter;
-import es.uniovi.asw.parser.reader.AgentsReader;
-import es.uniovi.asw.parser.reader.ExcelAgentsReader;
 import es.uniovi.asw.reportWriter.LogWriter;
 
-public class Loader {
+public class Loader implements ReadList
+{
 
 	private String formato;
 	private String filePathExcel;
@@ -35,7 +35,6 @@ public class Loader {
 	public void readList() throws IOException, BusinessException 
 	{	
 		List<Agent> agents = readAgents(formato, filePathExcel);
-		System.out.println(agents.size());
 		AgentService agentService = ServicesFactory.getAgentService();
 		printAgents(agents, filePathExcel);
 

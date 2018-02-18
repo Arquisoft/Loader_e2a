@@ -10,7 +10,7 @@ import org.junit.Test;
 
 import es.uniovi.asw.model.Agent;
 import es.uniovi.asw.model.exception.BusinessException;
-import es.uniovi.asw.parser.Loader;
+import es.uniovi.asw.parser.reader.Loader;
 
 public class AgentsLoaderTest {
 
