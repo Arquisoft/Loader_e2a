@@ -15,6 +15,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import es.uniovi.asw.model.Agent;
+import es.uniovi.asw.reportWriter.LogWriter;
 
 public class ExcelAgentsReader implements AgentsReader {
 
@@ -176,18 +177,41 @@ public class ExcelAgentsReader implements AgentsReader {
 		return tipo;
 	}
 	
-	private boolean comprobacionesFinales(Agent agente)
+	private boolean comprobacionesFinales(Agent agente) throws IOException
 	{
-		if (agente.getNombre() == null 		||
-				agente.getID() == null 		||
-				agente.getEmail() == null   ||
-				agente.getTipo() == 0 		||
-				!compruebaLocalizacion( agente ))
+		boolean agenteValido = true;
+		if (agente.getID() == null)
 		{
-			return false;
+			agenteValido = false;
+			LogWriter.write( "Usuario sin identificador." );
+		}
+		else if (agente.getNombre() == null)
+		{
+			agenteValido = false;
+			LogWriter.write( "El usuario " + agente.getID() + " no tiene nombre." );
+		}
+		else if (agente.getNombre() == null)
+		{
+			agenteValido = false;
+			LogWriter.write( "El usuario " + agente.getID() + " no tiene nombre." );
+		}
+		else if (agente.getEmail() == null)
+		{
+			agenteValido = false;
+			LogWriter.write( "El usuario " + agente.getID() + " no tiene email." );
+		}
+		else if (agente.getTipo() == 0)
+		{
+			agenteValido = false;
+			LogWriter.write( "El usuario " + agente.getID() + " no tiene un tipo de agente asignado." );
+		}
+		else if (!compruebaLocalizacion( agente ))
+		{
+			agenteValido = false;
+			LogWriter.write( "El usuario " + agente.getID() + " tiene una localización incorrecta." );
 		}
 		
-		return true;
+		return agenteValido;
 	}
 	
 	private boolean compruebaLocalizacion(Agent agente)
