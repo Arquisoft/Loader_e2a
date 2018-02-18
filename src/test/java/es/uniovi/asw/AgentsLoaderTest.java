@@ -3,15 +3,11 @@ package es.uniovi.asw;
 import static org.junit.Assert.assertEquals;
 
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import es.uniovi.asw.business.AgentService;
-import es.uniovi.asw.conf.ServicesFactory;
 import es.uniovi.asw.model.Agent;
 import es.uniovi.asw.model.exception.BusinessException;
 import es.uniovi.asw.parser.Loader;
@@ -35,9 +31,7 @@ public class AgentsLoaderTest {
     	// Saca la lista de agentes del fichero Excel
 		List<Agent> Agents = loader.readAgents(loader.getFormato(), loader.getFilePathExcel());
 		assertEquals(7, Agents.size());
-		
-		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-		
+				
 		Agent juan = Agents.get(0);
 		assertEquals(juan.getNombre(), "Juan");
 		assertEquals(juan.getEmail(), "juan@example.com");
@@ -51,7 +45,7 @@ public class AgentsLoaderTest {
 		assertEquals(pablo.getNombreUsuario(), "58429367Y");
     }
     
-    
+    /*
     @Test
     public void testBBDD() throws IOException, BusinessException { 
     	
@@ -74,5 +68,6 @@ public class AgentsLoaderTest {
 		
 		AgentService.deleteAllAgents(agents);	
     }
+    */
     
 }

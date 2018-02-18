@@ -1,9 +1,7 @@
 package es.uniovi.asw;
 
 import java.io.IOException;
-import java.util.List;
 
-import es.uniovi.asw.model.Agent;
 import es.uniovi.asw.model.exception.BusinessException;
 import es.uniovi.asw.parser.Loader;
 
@@ -13,7 +11,7 @@ public class Application {
 	 * @param args
 	 * 				args[0] -> "excel"
 	 * 				args[1] -> <ruta fichero excel>
-	 * 				args[2] (opcional) -> <ruta fichero csv>
+	 * 				args[2] -> <ruta fichero csv>
 	 */
 	public static void main(String... args) {
 		try {
