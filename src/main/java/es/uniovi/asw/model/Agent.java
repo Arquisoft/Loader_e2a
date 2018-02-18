@@ -1,57 +1,50 @@
 package es.uniovi.asw.model;
 
-import java.util.Date;
+import java.util.Random;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-@Table(name = "TAGENTS")
-public class Citizen {
-
+@Table(name = "TAGENT")
+public class Agent {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long claveAcceso;
-	@Id
-	private Long ID;
-
-	public void setID(Long iD) {
-		ID = iD;
-	}
+	@Column(unique = true)
+	private String ID;
+	@Column(name = "PASSWORD")
+	private String password;
+	@Column(name = "NOMBRE")
+	private String nombre;
+	@Column(name = "LOCALIZACION")
+	private String localizacion;
+	@Column(name = "EMAIL")
+	private String email;
+	@Column(name = "TIPO")
+	private int tipo;
 	
-
 	public void setTipo(int tipo) {
 		this.tipo = tipo;
 	}
-
-
-	public Long getClaveAcceso() {
-		return claveAcceso;
-	}
-
-
-	@Column(name = "NOMBRE")
-	private String nombre;
 	
-	@Column(name = "LOCALIZACION")
-	private String localizacion;
-
-	@Column(name = "EMAIL")
-	private String email;
-
-	@Column(name = "TIPO")
-	private int tipo;
+	
+	public void setID(String id)
+	{
+		this.ID = id;
+	}
 
 
 	// Constructor vacio para JPA
-	public Citizen() {
+	public Agent() {
 	}
 
 	
 	
-	public Citizen(Long iD, String nombre, String localizacion, String email, int tipo) {
+	public Agent(String iD, String nombre, String localizacion, String email, int tipo) {
 		super();
-		ID = iD;
+		this.ID = iD;
 		this.nombre = nombre;
 		this.localizacion = localizacion;
 		this.email = email;
@@ -68,7 +61,10 @@ public class Citizen {
 
 
 
-	public Long getID() {
+	public String getID() {
+		return ID;
+	}
+	public String getNombreUsuario() {
 		return ID;
 	}
 
@@ -117,23 +113,15 @@ public class Citizen {
 		this.email = email;
 	}
 
-	
 
-	
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((ID == null) ? 0 : ID.hashCode());
-		result = prime * result + ((claveAcceso == null) ? 0 : claveAcceso.hashCode());
-		result = prime * result + ((email == null) ? 0 : email.hashCode());
-		result = prime * result + ((localizacion == null) ? 0 : localizacion.hashCode());
-		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
-		result = prime * result + tipo;
 		return result;
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -142,37 +130,35 @@ public class Citizen {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Citizen other = (Citizen) obj;
+		Agent other = (Agent) obj;
 		if (ID == null) {
 			if (other.ID != null)
 				return false;
 		} else if (!ID.equals(other.ID))
 			return false;
-		if (claveAcceso == null) {
-			if (other.claveAcceso != null)
-				return false;
-		} else if (!claveAcceso.equals(other.claveAcceso))
-			return false;
-		if (email == null) {
-			if (other.email != null)
-				return false;
-		} else if (!email.equals(other.email))
-			return false;
-		if (localizacion == null) {
-			if (other.localizacion != null)
-				return false;
-		} else if (!localizacion.equals(other.localizacion))
-			return false;
-		if (nombre == null) {
-			if (other.nombre != null)
-				return false;
-		} else if (!nombre.equals(other.nombre))
-			return false;
-		if (tipo != other.tipo)
-			return false;
 		return true;
 	}
-
 	
-
+	
+	
+	public void crearContraseña()
+	{
+		Random random = new Random();
+		
+		String pass = "";
+		int longitud_pass = random.nextInt(4) + 7;
+		
+		for (int i = 0; i < longitud_pass; i++) 
+		{
+			char caracterRandom = (char)(random.nextInt(26) + 'a'); // caracter de A a Z
+			pass += caracterRandom;
+		}
+		
+		this.password = pass;
+	}
+	
+	public String getPassword()
+	{
+		return password;
+	}
 }
