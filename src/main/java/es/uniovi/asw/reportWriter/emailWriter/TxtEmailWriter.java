@@ -1,4 +1,4 @@
-package es.uniovi.asw.parser.emailWriter;
+package es.uniovi.asw.reportWriter.emailWriter;
 
 import java.io.IOException;
 

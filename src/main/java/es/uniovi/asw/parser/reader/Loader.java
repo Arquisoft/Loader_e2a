@@ -8,9 +8,9 @@ import es.uniovi.asw.conf.ServicesFactory;
 import es.uniovi.asw.model.Agent;
 import es.uniovi.asw.model.exception.BusinessException;
 import es.uniovi.asw.parser.ReadList;
-import es.uniovi.asw.parser.emailWriter.EmailWriter;
-import es.uniovi.asw.parser.emailWriter.TxtEmailWriter;
 import es.uniovi.asw.reportWriter.LogWriter;
+import es.uniovi.asw.reportWriter.emailWriter.EmailWriter;
+import es.uniovi.asw.reportWriter.emailWriter.TxtEmailWriter;
 
 public class Loader implements ReadList
 {
