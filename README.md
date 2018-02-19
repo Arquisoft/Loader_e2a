@@ -46,6 +46,8 @@ se debe importar (**COMO [MAVEN](http://maven.apache.org/download.cgi)**) el pro
 Una vez que se tenga el proyecto importado, hay que abrir la línea de comandos y trasladarse hasta
 la carpeta raíz del proyecto (*xxx\xxx\...\Loader_e2a*).
 
+**Para que los tests que hacen uso de la base de datos funcionen, se necesita abrir el fichero .bat del directorio "BBDDTesting/data/startup.bat".**
+
 A continuación, se ejecuta la siguiente instrucción:
 
 ```bash
