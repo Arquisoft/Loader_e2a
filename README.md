@@ -6,6 +6,8 @@
 
 Loader - e2a
 
+Enlace al repositorio común de Agents y Loader, que contiene la documentación: [inci_e2a](https://github.com/Arquisoft/inci_e2a)
+
 # Autores
 
 * Herminio García González (@herminiogg)
