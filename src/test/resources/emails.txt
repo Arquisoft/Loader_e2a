@@ -493,3 +493,51 @@ Su nombre de usuario es: 19800
 To entity@entity.com:
 Saludos Entity1, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
 Su nombre de usuario es: EntityX100
+To juan@example.com:
+Saludos Juan, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: 59019237X
+To luis@example.com:
+Saludos Luis, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: 57104958S
+To ana@example.com:
+Saludos Ana, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: 10573947Y
+To uo251017@uniovi.es:
+Saludos Pablo Díaz, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: 58429367Y
+To sensor1@sensor.com:
+Saludos Sensor1, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: 3000
+To sensor2@sensor.com:
+Saludos Sensor2, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: 19800
+To entity@entity.com:
+Saludos Entity1, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: EntityX100
+To juan@example.com:
+Saludos Juan, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: 59019237X
+To luis@example.com:
+Saludos Luis, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: 57104958S
+To ana@example.com:
+Saludos Ana, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: 10573947Y
+To uo251017@uniovi.es:
+Saludos Pablo Díaz, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: 58429367Y
+To sensor1@sensor.com:
+Saludos Sensor1, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: 3000
+To sensor2@sensor.com:
+Saludos Sensor2, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: 19800
+To entity@entity.com:
+Saludos Entity1, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: EntityX100
+To sensor2@sensor.com:
+Saludos skjdfkshgd, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: null
+To null:
+Saludos null, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: null

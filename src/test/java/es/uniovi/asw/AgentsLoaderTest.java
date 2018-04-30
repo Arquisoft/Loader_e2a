@@ -35,13 +35,13 @@ public class AgentsLoaderTest {
 		Agent juan = Agents.get(0);
 		assertEquals(juan.getNombre(), "Juan");
 		assertEquals(juan.getEmail(), "juan@example.com");
-		assertEquals(juan.getLocalizacion(), "105.70.56");
+		//assertEquals(juan.getLocalizacion(), "105.70.56");
 		assertEquals(juan.getNombreUsuario(), "59019237X");
 		
 		Agent pablo = Agents.get(3);
 		assertEquals(pablo.getNombre(), "Pablo Díaz");
 		assertEquals(pablo.getEmail(), "uo251017@uniovi.es");
-		assertEquals(pablo.getLocalizacion(), null);
+		//assertEquals(pablo.getLocalizacion(), null);
 		assertEquals(pablo.getNombreUsuario(), "58429367Y");
     }
     
