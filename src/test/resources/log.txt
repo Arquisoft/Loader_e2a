@@ -1,113 +1,32 @@
-El usuario 21487463Y tiene una localización incorrecta.
-El usuario 1111111X no tiene email.
-El usuario 21487463Y tiene una localización incorrecta.
-El usuario 1111111X no tiene email.
-El usuario 21487463Y tiene una localización incorrecta.
-El usuario 1111111X no tiene email.
-El usuario 21487463Y tiene una localización incorrecta.
-El usuario 1111111X no tiene email.
-El usuario 21487463Y tiene una localización incorrecta.
-El usuario 1111111X no tiene email.
-El usuario 59019237X ya está registrado.
-El usuario 57104958S ya está registrado.
-El usuario 10573947Y ya está registrado.
-El usuario 58429367Y ya está registrado.
-El usuario 3000 ya está registrado.
-El usuario 19800 ya está registrado.
-El usuario EntityX100 ya está registrado.
-El usuario 21487463Y tiene una localización incorrecta.
-El usuario 1111111X no tiene email.
-El usuario 21487463Y tiene una localización incorrecta.
-El usuario 1111111X no tiene email.
-El usuario 21487463Y tiene una localización incorrecta.
-El usuario 1111111X no tiene email.
-El usuario 21487463Y tiene una localización incorrecta.
-El usuario 1111111X no tiene email.
-El usuario 21487463Y tiene una localización incorrecta.
-El usuario 1111111X no tiene email.
-El usuario 21487463Y tiene una localización incorrecta.
-El usuario 1111111X no tiene email.
-El usuario 21487463Y tiene una localización incorrecta.
-El usuario 1111111X no tiene email.
-El usuario 21487463Y tiene una localización incorrecta.
-El usuario 1111111X no tiene email.
-El usuario 21487463Y tiene una localización incorrecta.
-El usuario 1111111X no tiene email.
-El usuario 21487463Y tiene una localización incorrecta.
-El usuario 1111111X no tiene email.
-El usuario 1 ya está registrado.
-El usuario 2 ya está registrado.
-El usuario 3 ya está registrado.
-El usuario 4 ya está registrado.
-El usuario 5 ya está registrado.
-El usuario 6 ya está registrado.
-El usuario 7 ya está registrado.
-El usuario 8 ya está registrado.
-El usuario 1 ya está registrado.
-El usuario 2 ya está registrado.
-El usuario 3 ya está registrado.
-El usuario 4 ya está registrado.
-El usuario 5 ya está registrado.
-El usuario 6 ya está registrado.
-El usuario 7 ya está registrado.
-El usuario 8 ya está registrado.
-El usuario 1 ya está registrado.
-El usuario 2 ya está registrado.
-El usuario 3 ya está registrado.
-El usuario 4 ya está registrado.
-El usuario 5 ya está registrado.
-El usuario 6 ya está registrado.
-El usuario 7 ya está registrado.
-El usuario 8 ya está registrado.
-El usuario 1 ya está registrado.
-El usuario 2 ya está registrado.
-El usuario 3 ya está registrado.
-El usuario 4 ya está registrado.
-El usuario 5 ya está registrado.
-El usuario 6 ya está registrado.
-El usuario 7 ya está registrado.
-El usuario 8 ya está registrado.
-El usuario 1 ya está registrado.
-El usuario 2 ya está registrado.
-El usuario 3 ya está registrado.
-El usuario 4 ya está registrado.
-El usuario 5 ya está registrado.
-El usuario 6 ya está registrado.
-El usuario 7 ya está registrado.
-El usuario 8 ya está registrado.
-El usuario 9 ya está registrado.
-El usuario 1 ya está registrado.
-El usuario 2 ya está registrado.
-El usuario 3 ya está registrado.
-El usuario 4 ya está registrado.
-El usuario 5 ya está registrado.
-El usuario 6 ya está registrado.
-El usuario 7 ya está registrado.
-El usuario 8 ya está registrado.
-El usuario 9 ya está registrado.
-El usuario 1 ya está registrado.
-El usuario 2 ya está registrado.
-El usuario 3 ya está registrado.
-El usuario 4 ya está registrado.
-El usuario 5 ya está registrado.
-El usuario 6 ya está registrado.
-El usuario 7 ya está registrado.
-El usuario 8 ya está registrado.
-El usuario 9 ya está registrado.
-El usuario 1 ya está registrado.
-El usuario 2 ya está registrado.
-El usuario 3 ya está registrado.
-El usuario 4 ya está registrado.
-El usuario 5 ya está registrado.
-El usuario 6 ya está registrado.
-El usuario 7 ya está registrado.
-El usuario 8 ya está registrado.
-El usuario 9 ya está registrado.
-El usuario 1 ya está registrado.
-El usuario 1 ya está registrado.
-El usuario 2 ya está registrado.
-El usuario 62 ya está registrado.
-El usuario 63 ya está registrado.
-El usuario 64 ya está registrado.
-El usuario 65 ya está registrado.
-El usuario 68 ya está registrado.
+Usuario sin identificador.
+Usuario sin identificador.
+Usuario sin identificador.
+Usuario sin identificador.
+El usuario null ya existe.
+El usuario null ya existe.
+El usuario null ya existe.
+El usuario null ya existe.
+El usuario null ya existe.
+El usuario null ya existe.
+El usuario null ya existe.
+El usuario Sensor1 ya existe.
+El usuario Persona1 ya existe.
+El usuario Entidad1 ya existe.
+El usuario Entidad2 ya existe.
+El usuario Sensor1 ya existe.
+El usuario Persona1 ya existe.
+El usuario Entidad1 ya existe.
+El usuario Entidad2 ya existe.
+El usuario Sensor1 ya existe.
+El usuario Persona1 ya existe.
+El usuario Entidad1 ya existe.
+El usuario Entidad2 ya existe.
+El usuario Sensor1 ya existe.
+El usuario Persona1 ya existe.
+El usuario Entidad1 ya existe.
+El usuario Entidad2 ya existe.
+El usuario Sensor1 ya existe.
+El usuario Persona1 ya existe.
+El usuario Entidad1 ya existe.
+El usuario Entidad2 ya existe.
+El usuario Entidad3 ya existe.

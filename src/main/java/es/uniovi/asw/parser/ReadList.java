@@ -10,5 +10,5 @@ public interface ReadList
 {
 	public void readList() throws IOException, BusinessException;
 	
-	public List<Agent> readAgents(String formato, String filePathExcel) throws IOException;
+	public List<Agent> readAgents(String formato, String filePathExcel) throws IOException, BusinessException;
 }

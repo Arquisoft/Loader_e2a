@@ -39,18 +39,13 @@ public class Loader implements ReadList
 		printAgents(agents, filePathExcel);
 
 		for (Agent agent : agents) {
-			if (!agentService.isAgentInDatabase(agent)) {
+			if (agentService.isAgentInDatabase(agent)) {
 				sendEmail(agent, new TxtEmailWriter());
-				agentService.insertAgent(agent);
-			} else {
-				String mensaje = "El usuario " + agent.getID()
-						+ " ya está registrado.";
-				LogWriter.write(mensaje);
 			}
 		}
 	}
 
-	public List<Agent> readAgents(String formato, String filePathExcel) throws IOException 
+	public List<Agent> readAgents(String formato, String filePathExcel) throws IOException, BusinessException 
 	{
 		return getReader(formato).readAgents(filePathExcel);
 	}
@@ -91,7 +86,7 @@ public class Loader implements ReadList
 	
 	private void printAgents(List<Agent> agents, String filePathExcel) {
 		System.out.println("Estos son los usuarios presentes en el fichero "
-				+ filePathExcel + ":");
+				+ filePathExcel + ", y que han sido insertados en la BBDD:");
 		for (Agent agent : agents) {
 			System.out.println(agent);
 		}

@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -18,12 +17,13 @@ import es.uniovi.asw.business.AgentService;
 import es.uniovi.asw.business.impl.AgentServiceImpl;
 import es.uniovi.asw.model.Agent;
 import es.uniovi.asw.model.exception.BusinessException;
+import es.uniovi.asw.reportWriter.LogWriter;
 
 public class ExcelAgentsReader implements AgentsReader {
 
 	private final static int COLUMNA_LOCALIZACION=1;
 	private String filePathCSV;
-	private Map<Integer, String> tiposAgentes;
+	//private Map<Integer, String> tiposAgentes;
 	
 	private AgentService agentService = new AgentServiceImpl();
 	
@@ -35,12 +35,12 @@ public class ExcelAgentsReader implements AgentsReader {
 	}
 	
 	@Override
-	public List<Agent> readAgents(String filePathExcel) throws IOException {
+	public List<Agent> readAgents(String filePathExcel) throws IOException, BusinessException {
 		boolean agenteValido = true; // por si se lee un campo no válido
 		
 		List<Agent> citizens = new ArrayList<Agent>();
 		
-		tiposAgentes = leerCSV();
+		//tiposAgentes = leerCSV();
 		
 		File file = new File( filePathExcel );
 		FileInputStream inputStream = new FileInputStream(file);
@@ -68,13 +68,13 @@ public class ExcelAgentsReader implements AgentsReader {
 				}
 				
 				switch (columnIndex) {
-				case 0: // nombre
+				case 0: // password
 					agent.setPassword( (String) getContenidoCelda( nextCell ) );
 					break;
-				case 1: // localización
+				case 1: // nombre usuario
 					agent.setNombreUsuario( (String) getContenidoCelda( nextCell ) );
 					break;
-				case 2: // email
+				case 2: // tipo agente
 					agent.setKind( (String) getContenidoCelda( nextCell ) );
 					break;
 				case 3: // identificador
@@ -99,10 +99,9 @@ public class ExcelAgentsReader implements AgentsReader {
 				}
 			}
 			
-//			if ( comprobacionesFinales( agent ) && agenteValido ) {
-//				agent.crearContraseña();
-//				citizens.add(agent);
-//			}
+			if ( !comprobacionesFinales( agent ) ) {
+				agenteValido = false;
+			}
 			
 			if ( agenteValido ) {
 				agent.crearContraseña();
@@ -165,7 +164,7 @@ public class ExcelAgentsReader implements AgentsReader {
 		
 		return true;
 	}
-	
+	/*
 	private Map<Integer, String> leerCSV() throws IOException
 	{
 		return new CsvReader().leerCSV( filePathCSV );
@@ -193,47 +192,39 @@ public class ExcelAgentsReader implements AgentsReader {
 		
 		return tipo;
 	}
+	*/
 	
-//	private boolean comprobacionesFinales(Agent agente) throws IOException
-//	{
-//		boolean agenteValido = true;
-//		if (agente.getID() == null)
-//		{
-//			agenteValido = false;
-//			LogWriter.write( "Usuario sin identificador." );
-//		}
-//		else if (agente.getNombre() == null)
-//		{
-//			agenteValido = false;
-//			LogWriter.write( "El usuario " + agente.getID() + " no tiene nombre." );
-//		}
-//		else if (agente.getNombre() == null)
-//		{
-//			agenteValido = false;
-//			LogWriter.write( "El usuario " + agente.getID() + " no tiene nombre." );
-//		}
-//		else if (agente.getEmail() == null)
-//		{
-//			agenteValido = false;
-//			LogWriter.write( "El usuario " + agente.getID() + " no tiene email." );
-//		}
-//		else if (agente.getTipo() == 0)
-//		{
-//			agenteValido = false;
-//			LogWriter.write( "El usuario " + agente.getID() + " no tiene un tipo de agente asignado." );
-//		}
-//		else if (!compruebaLocalizacion( agente ))
-//		{
-//			agenteValido = false;
-//			LogWriter.write( "El usuario " + agente.getID() + " tiene una localización incorrecta." );
-//		}
-//		
-//		return agenteValido;
-//	}
+	private boolean comprobacionesFinales(Agent agente) throws IOException, BusinessException
+	{
+		boolean agenteValido = true;
+		
+		if (agente.getNombre() == null)
+		{
+			agenteValido = false;
+			LogWriter.write( "El usuario " + agente.getNombreUsuario() + " no tiene nombre." );
+		}
+		else if (agente.getNombre() == null)
+		{
+			agenteValido = false;
+			LogWriter.write( "El usuario " + agente.getNombreUsuario() + " no tiene nombre." );
+		}
+		else if (agente.getEmail() == null)
+		{
+			agenteValido = false;
+			LogWriter.write( "El usuario " + agente.getNombreUsuario() + " no tiene email." );
+		}
+		else if (agente.getTipo() == null)
+		{
+			agenteValido = false;
+			LogWriter.write( "El usuario " + agente.getNombreUsuario() + " no tiene un tipo de agente asignado." );
+		}
+		else if (agentService.isAgentInDatabase( agente ))
+		{
+			agenteValido = false;
+			LogWriter.write( "El usuario " + agente.getNombreUsuario() + " ya existe." );
+		}
+		
+		return agenteValido;
+	}
 	
-//	private boolean compruebaLocalizacion(Agent agente)
-//	{
-//		return ( (agente.getKind() == 3 && agente.getLocalizacion() != null) || agente.getTipo() != 3) 
-//																								? true : false;
-//	}
 }

@@ -541,3 +541,9 @@ Su nombre de usuario es: null
 To null:
 Saludos null, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
 Su nombre de usuario es: null
+To entity2@hotmail.com:
+Saludos Entidad2, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: 74
+To entity3@hotmail.com:
+Saludos Entidad3, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: 75
