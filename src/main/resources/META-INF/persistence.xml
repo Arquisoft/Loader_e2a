@@ -1,0 +1,28 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+    http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+
+    <persistence-unit name="carworkshop">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+
+		<properties>
+			<property name="eclipselink.ddl-generation" value="drop-and-create-tables"/> 
+			<property name="eclipselink.logging.file" value="eclipselink.log"/>
+			<property name="eclipselink.logging.level" value="OFF"/>
+						
+			
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://52.39.71.54:3306/e2atest?useSSL=false" />
+            <property name="javax.persistence.jdbc.user" value="e2auser" />
+            <property name="javax.persistence.jdbc.password" value="EIIASW2018" />
+            
+			
+			
+			
+		</properties>
+	</persistence-unit>
+
+</persistence>
