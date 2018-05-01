@@ -86,7 +86,7 @@ public class Loader implements ReadList
 	
 	private void printAgents(List<Agent> agents, String filePathExcel) {
 		System.out.println("Estos son los usuarios presentes en el fichero "
-				+ filePathExcel + ", y que han sido insertados en la BBDD:");
+				+ filePathExcel + ":");
 		for (Agent agent : agents) {
 			System.out.println(agent);
 		}

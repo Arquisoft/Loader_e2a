@@ -110,13 +110,13 @@ public class ExcelAgentsReader implements AgentsReader {
 				} catch (BusinessException e) {
 					;
 				}
-				citizens.add(agent);
 			}
 			
 			else
-				System.err.println("Agente no insertado.");
+				System.err.println("Agente " + agent.getNombreUsuario() + " no insertado.");
 			
 			agenteValido = true;
+			citizens.add(agent);
 		}
 		workbook.close();
 		inputStream.close();

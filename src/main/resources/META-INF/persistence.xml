@@ -15,9 +15,9 @@
 						
 			
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://52.39.71.54:3306/e2atest?useSSL=false" />
-            <property name="javax.persistence.jdbc.user" value="e2auser" />
-            <property name="javax.persistence.jdbc.password" value="EIIASW2018" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://35.180.34.78:3306/Final_Produccion?useSSL=false" />
+            <property name="javax.persistence.jdbc.user" value="User_E2A" />
+            <property name="javax.persistence.jdbc.password" value="EII_ASW_2018" />
             
 			
 			

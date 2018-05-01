@@ -10,7 +10,7 @@ public class AgentFinder {
 	public static boolean isInDatabase(Agent agent) {
 		List<Agent> lista = Jpa
 				.getManager()
-				.createQuery("select a from Agent a where a.id = ?1 or a.nombreusuario = ?2",
+				.createQuery("select a from Agent a where a.id = ?1 or a.nombreUsuario = ?2",
 						Agent.class).setParameter(1, agent.getID())
 									.setParameter(2, agent.getNombreUsuario())
 				.getResultList();
