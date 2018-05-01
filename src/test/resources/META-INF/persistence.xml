@@ -15,9 +15,9 @@
 						
 			
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://sql2.freemysqlhosting.net:3306/sql2235187" />
-            <property name="javax.persistence.jdbc.user" value="sql2235187" />
-            <property name="javax.persistence.jdbc.password" value="eC8*yC8!" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://35.180.34.78:3306/Test_Loader?useSSL=false" /> />
+            <property name="javax.persistence.jdbc.user" value="User_E2A" />
+            <property name="javax.persistence.jdbc.password" value="EII_ASW_2018" />
             
 
 		</properties>
