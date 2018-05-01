@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -23,7 +24,7 @@ public class ExcelAgentsReader implements AgentsReader {
 
 	private final static int COLUMNA_LOCALIZACION=1;
 	private String filePathCSV;
-	//private Map<Integer, String> tiposAgentes;
+	private Map<Integer, String> tiposAgentes;
 	
 	private AgentService agentService = new AgentServiceImpl();
 	
@@ -40,7 +41,7 @@ public class ExcelAgentsReader implements AgentsReader {
 		
 		List<Agent> citizens = new ArrayList<Agent>();
 		
-		//tiposAgentes = leerCSV();
+		tiposAgentes = leerCSV();
 		
 		File file = new File( filePathExcel );
 		FileInputStream inputStream = new FileInputStream(file);
@@ -75,6 +76,7 @@ public class ExcelAgentsReader implements AgentsReader {
 					agent.setNombreUsuario( (String) getContenidoCelda( nextCell ) );
 					break;
 				case 2: // tipo agente
+					agenteValido = compruebaAgenteEnCSV( (String) getContenidoCelda( nextCell ) );
 					agent.setKind( (String) getContenidoCelda( nextCell ) );
 					break;
 				case 3: // identificador
@@ -164,7 +166,7 @@ public class ExcelAgentsReader implements AgentsReader {
 		
 		return true;
 	}
-	/*
+	
 	private Map<Integer, String> leerCSV() throws IOException
 	{
 		return new CsvReader().leerCSV( filePathCSV );
@@ -173,6 +175,9 @@ public class ExcelAgentsReader implements AgentsReader {
 	private boolean compruebaAgenteEnCSV(String valorCelda) 
 	{
 		int tipoAgenteNumerico = getTipoAgente( valorCelda );
+		if (tipoAgenteNumerico == -1)
+			return false;
+		
 		String tipoAgente= (String) tiposAgentes.get( tipoAgenteNumerico );
 		
 		return ( tipoAgente.equals( valorCelda ) ) ? true : false;
@@ -192,7 +197,6 @@ public class ExcelAgentsReader implements AgentsReader {
 		
 		return tipo;
 	}
-	*/
 	
 	private boolean comprobacionesFinales(Agent agente) throws IOException, BusinessException
 	{

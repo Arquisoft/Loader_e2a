@@ -577,3 +577,45 @@ Su nombre de usuario es: 4
 To entity3@hotmail.com:
 Saludos Entidad3, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
 Su nombre de usuario es: 5
+To sensor1@sensor.com:
+Saludos Pepa, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: 1
+To estafa@hotmail.com:
+Saludos Rodrigo, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: 2
+To entity@hotmail.com:
+Saludos Entidad, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: 3
+To entity2@hotmail.com:
+Saludos Entidad2, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: 4
+To entity3@hotmail.com:
+Saludos Entidad3, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: 5
+To sensor1@sensor.com:
+Saludos Pepa, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: 1
+To estafa@hotmail.com:
+Saludos Rodrigo, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: 2
+To entity@hotmail.com:
+Saludos Entidad, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: 3
+To entity2@hotmail.com:
+Saludos Entidad2, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: 4
+To entity3@hotmail.com:
+Saludos Entidad3, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: 5
+To sensor1@sensor.com:
+Saludos Pepa, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: 1
+To estafa@hotmail.com:
+Saludos Rodrigo, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: 2
+To entity@hotmail.com:
+Saludos Entidad, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: 3
+To entity2@hotmail.com:
+Saludos Entidad2, le informamos de que ha sido registrado correctamente en el sistema de participación ciudadana.
+Su nombre de usuario es: 4
