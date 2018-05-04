@@ -1,7 +1,5 @@
 package es.uniovi.asw.model;
 
-import java.util.Random;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,36 +8,34 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name="agent")
-@SequenceGenerator(name="seq", initialValue=6, allocationSize=100)
+@Table(name = "agent")
+@SequenceGenerator(name = "seq", initialValue = 6, allocationSize = 100)
 public class Agent {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq")
-	@Column(name="id")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
+	@Column(name = "id")
 	Long id;
 
-	@Column(unique = true, name="nombre_usuario")
+	@Column(unique = true, name = "nombre_usuario")
 	private String nombreUsuario;
 
-	@Column(name="password")
+	@Column(name = "password")
 	private String password;
-	@Column(name="kind")
+	@Column(name = "kind")
 	private String kind;
-	@Column(name="kind_code")
+	@Column(name = "kind_code")
 	private Long kindCode;
-	@Column(unique = true, name="dni")
+	@Column(unique = true, name = "dni")
 	private String dni;
-	@Column(name="nombre")
+	@Column(name = "nombre")
 	private String nombre;
-	@Column(name="apellidos")
+	@Column(name = "apellidos")
 	private String apellidos;
-	@Column(name="email")
+	@Column(name = "email")
 	private String email;
 
-	
 	public Agent() {
 
 	}
@@ -75,7 +71,6 @@ public class Agent {
 	public void setUser(String user) {
 		this.nombreUsuario = user;
 	}
-
 
 	public Long getID() {
 		return id;
@@ -151,19 +146,19 @@ public class Agent {
 		return "Citizen [ID=" + id + ", nombre=" + nombre + ", email=" + email + ", tipo=" + kind + "]";
 	}
 
-	public void crearContraseña() {
-		Random random = new Random();
-
-		String pass = "";
-		int longitud_pass = random.nextInt(4) + 7;
-
-		for (int i = 0; i < longitud_pass; i++) {
-			char caracterRandom = (char) (random.nextInt(26) + 'a'); // caracter de A a Z
-			pass += caracterRandom;
-		}
-
-		this.password = pass;
-	}
+	// public void crearContraseña() {
+	// Random random = new Random();
+	//
+	// String pass = "";
+	// int longitud_pass = random.nextInt(4) + 7;
+	//
+	// for (int i = 0; i < longitud_pass; i++) {
+	// char caracterRandom = (char) (random.nextInt(26) + 'a'); // caracter de A a Z
+	// pass += caracterRandom;
+	// }
+	//
+	// this.password = pass;
+	// }
 
 	public String getPassword() {
 		return password;
@@ -172,7 +167,6 @@ public class Agent {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
 
 	public Long getId() {
 		return id;
