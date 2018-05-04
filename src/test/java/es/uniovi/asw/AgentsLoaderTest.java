@@ -64,10 +64,11 @@ public class AgentsLoaderTest {
 		trx.begin();
     	
     	List<Agent> agents = agService.findAllAgents();
-    	assertTrue( agents.size() > 0);
+    	System.out.println(agents.size());
+    	assertTrue(agents.size() > 0);
     	
     	Agent agente = new Agent("Persona1", "sin contrasenia");
-    	assertTrue(agService.isAgentInDatabase( agente )); // busca por nombre de usuario
+    	assertTrue(!agService.isAgentInDatabase( agente )); // busca por nombre de usuario
     	
     	trx.commit();
 		mapper.close();
