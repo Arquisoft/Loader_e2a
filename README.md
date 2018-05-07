@@ -58,9 +58,9 @@ C:\...\Loader_e2a>mvn exec:java -Dexec.mainClass="es.uniovi.asw.Application" -De
 
 >Por ejemplo, ruta_fichero_excel puede ser:
 ```
-src/test/resources/test1.xlsx
+src\test\resources\test1.xlsx
 ```
 >ruta_fichero_csv:
 ```
-src/test/resources/TiposAgentes.csv
+src\test\resources\TiposAgentes.csv
 ```
